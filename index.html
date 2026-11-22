@@ -68,21 +68,75 @@ body{background:#e7eee5;color:#173d32}
 .section h2,.venuecard,.countgrid div,.event{transition:transform .35s ease,box-shadow .35s ease}
 @media(hover:hover){.countgrid div:hover{transform:translateY(-5px);box-shadow:0 14px 28px #254c3220}.venuecard:hover{transform:translateY(-4px)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Reference-matched emerald invitation layout */
+.hero{min-height:100svh;background:radial-gradient(ellipse at 50% 40%,#0d6149 0%,#064332 48%,#032e24 100%);background-attachment:scroll;justify-content:center;padding:55px 34px}
+.hero:before{content:"";position:absolute;inset:26px;background:radial-gradient(circle at 18% 22%,#d8bd7820 0 1px,transparent 2px),radial-gradient(circle at 78% 72%,#d8bd7820 0 1px,transparent 2px);background-size:48px 48px}
+.hero:after{inset:13px;border:1px solid #c7a66b;outline:1px solid #c7a66b55;outline-offset:5px}
+.hero .arabic{font-size:27px;color:#e9d19b;margin-bottom:22px}
+.hero-rule{width:85px;height:1px;background:#c7a66b;margin:0 auto 25px}
+.hero-blessing{font-size:18px;line-height:1.5;max-width:300px;color:#e9ddc0}
+.hero h1{font:italic clamp(54px,13vw,76px)/.98 'Great Vibes',cursive;color:#f0d9a5;margin:22px 0;text-shadow:none}
+.hero-sub,.hero-date,.hero-hint{font:8px Manrope,sans-serif;letter-spacing:.24em;color:#dfc58c}
+.hero-date{margin-top:18px}
+.hero-open{margin-top:27px;padding:13px 25px;border:1px solid #d4b36f;border-radius:30px;background:#d6b66e;color:#163d30;text-decoration:none;font:600 9px Manrope,sans-serif;letter-spacing:.15em}
+.hero-hint{margin-top:19px;font-size:7px}
+.section{padding:70px 28px}
+.welcome{background:#f7f0df}
+.arabic{font-size:27px;color:#e9d19b;margin:0 0 20px}
+.arabic.dark{color:#0b4d3b}
+.welcome h2,.date-section h2,.gathering h2,.reach h2{font-style:normal;font-size:34px;color:#174b39;margin:15px 0}
+.welcome .copy,.date-section .copy,.reach .copy{max-width:330px;margin:0 auto;line-height:1.55}
+.couple-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:340px;margin:28px auto 15px}
+.couple-grid article{border:1px solid #d9c79f;border-radius:70px 70px 8px 8px;padding:20px 8px;background:#fffaf0}
+.person-symbol{font-size:25px;color:#b48b48}
+.couple-grid h3{font:italic 27px 'Cormorant Garamond',serif;color:#174b39;margin:8px 0}
+.couple-grid small{font:8px Manrope,sans-serif;letter-spacing:.17em;color:#9b804e}
+.together{font-size:32px;line-height:1.2;color:#b28a48;margin-top:20px}
+.date-section{background:#f2e8d3}
+.ornament{color:#b48b48;letter-spacing:.35em;margin:18px 0}
+.date-card{max-width:320px;margin:25px auto 20px;padding:25px;border:1px solid #c8a96b;background:#fffaf0;outline:1px solid #d9c99f;outline-offset:5px;display:flex;flex-direction:column;align-items:center;gap:7px}
+.date-card small{font:8px Manrope,sans-serif;letter-spacing:.22em;color:#9d804b}
+.date-card strong{font:58px 'Cormorant Garamond',serif;font-weight:400;color:#b58a45;line-height:1}
+.date-card span{font-size:21px;color:#174b39}
+.countgrid{max-width:340px;gap:7px;margin:25px auto}
+.countgrid div{background:#064332;border:0;border-radius:3px;padding:12px 3px}
+.countgrid b{color:#f0d9a5;font-size:24px}.countgrid span{color:#e5d4ad;font-size:7px}
+.gathering{background:#f8f1e1}
+.gathering .venuecard{max-width:330px;padding:25px 15px;background:#fffaf0;border-color:#d7bf8b}
+.gathering .venuecard .eyebrow{margin-top:13px}
+.gathering .venuecard p{font-size:17px;color:#526153}
+.gathering .venuecard h3{font:500 22px 'Cormorant Garamond',serif;color:#174b39}
+.reach{background:#f3ead8}
+.map-card{max-width:340px;margin:25px auto 0;padding:0 0 22px;background:#fffaf0;border:1px solid #d9cba8;border-radius:9px;overflow:hidden}
+.map-art{height:145px;position:relative;background:linear-gradient(145deg,#e1e8d6,#f2f0dc);overflow:hidden}
+.map-art:before,.map-art:after{content:"";position:absolute;width:150px;height:65px;background:#c8d4b9;border-radius:60% 40% 50% 50%;transform:rotate(-24deg)}
+.map-art:before{left:-35px;top:-15px}.map-art:after{right:-45px;bottom:-20px}
+.map-pin{position:absolute;z-index:1;left:50%;top:45%;font-size:25px}
+.map-card h3{font:500 22px 'Cormorant Garamond',serif;color:#174b39;margin:17px 0 4px}
+.map-card p{font-size:15px;color:#6e796b;margin:0 0 15px}
+.map{display:inline-block;padding:11px 23px;border-radius:25px}
+.blessing{background:linear-gradient(145deg,#064332,#032d24);color:#f0dfb8;border:0}
+.blessing h2{font-size:31px;color:#f0d9a5}
+.blessing p{max-width:330px;margin:0 auto;font-size:18px;line-height:1.5;color:#e8dfc8}
+.backtop{display:inline-block;margin-top:24px;color:#d7bd83;text-decoration:none;font:8px Manrope,sans-serif;letter-spacing:.18em}
+.footer{background:#032d24;border-top:1px solid #c7a66b}
+.footer .script{font-size:37px;color:#e8cc8d!important}
 </style></head><body>
 <div class="intro" id="intro"><div class="intro-inner"><div class="intro-caption">YOU ARE CORDIALLY INVITED · 04 DECEMBER 2026</div><div class="doors" id="doors"><div class="door-welcome"><small>THE WEDDING CELEBRATION OF</small><strong>Shireen &amp; Sameer</strong><span>FRIDAY · 7 PM ONWARDS</span></div><div class="door-frame"></div><div class="door-panel door-left"></div><div class="door-panel door-right"></div><div class="door-center">♡</div></div><button class="openbtn" id="openbtn">OPEN THE DOORS</button><div class="intro-note">A beautiful beginning, by the grace of Allah</div></div></div>
 <audio id="song" src="https://res.cloudinary.com/mnqvmnca/video/upload/v1795369104/wedding-song.mp3" preload="auto" loop></audio>
-<main class="page" id="page"><header class="hero"><div class="small">Together with our families</div><h1>Shireen <span class="amp">&amp;</span><br>Sameer</h1><div class="small">Joyfully invite you to celebrate their wedding</div><p>With love, duas and the blessings of Allah</p><div class="date">FRIDAY · 04 DECEMBER 2026 · 7 PM ONWARDS</div></header>
-<section class="section"><div class="eyebrow">With love and gratitude</div><h2>Our Wedding Celebration</h2><p class="copy">We are honoured to welcome you to share in the joy of our wedding day. Your presence and blessings will make our celebration unforgettable.</p><div class="script">Shireen &amp; Sameer</div></section>
-<section class="section soft"><div class="eyebrow">A little surprise</div><h2>Scratch to Reveal</h2><p class="copy">A special message awaits you. Tap the heart to reveal it.</p><div class="heartbox" id="heartbox"><button id="reveal">Tap to Reveal ♡</button></div><p class="copy" id="revealedText" hidden>We can't wait to celebrate this beautiful day with you! With love, Shireen &amp; Sameer.</p></section>
-<section class="section"><div class="eyebrow">Counting every moment</div><h2>Save the Date</h2><div class="countgrid"><div><b id="days">--</b><span>DAYS</span></div><div><b id="hours">--</b><span>HOURS</span></div><div><b id="minutes">--</b><span>MINUTES</span></div><div><b id="seconds">--</b><span>SECONDS</span></div></div><p class="copy">Friday, 04 December 2026 · 7 PM</p></section>
-<section class="section soft"><div class="eyebrow">The day's celebrations</div><h2>Wedding Timeline</h2><div class="timeline"><div class="event"><h3>Guest Arrival</h3><p>Welcome and greetings · 7:00 PM</p></div><div class="event"><h3>Wedding Ceremony</h3><p>Celebrate the beautiful union</p></div><div class="event"><h3>Celebration &amp; Dinner</h3><p>Sharing happiness with family and friends</p></div></div></section>
-<section class="section"><div class="eyebrow">Join us at</div><h2>The Venue</h2><div class="venuecard"><div class="eyebrow">Wedding venue</div><h3>Quadri Function Hall</h3><p class="copy">Udgir, Maharashtra – 413517</p><p class="copy">Friday, 04 December 2026<br>7 PM onwards</p><a class="map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Quadri+Function+Hall+Udgir+Maharashtra">VIEW ON GOOGLE MAPS</a></div></section>
-<section class="section soft"><div class="eyebrow">Send your wishes</div><h2>Leave a Message</h2><p class="copy">Share your blessings and good wishes with the couple.</p><form class="form" id="wishform"><label>Your Name</label><input required placeholder="Enter your name"><label>Your Message</label><textarea required rows="3" placeholder="Write your wishes..."></textarea><button type="submit">SEND YOUR WISHES</button></form><p id="wishthanks" class="copy" hidden>Thank you for your lovely wishes!</p></section>
-<footer class="footer"><div class="script" style="color:#ead9b5">With love &amp; duas</div><p>Shireen &amp; Sameer</p><small>May Allah bless this beautiful union</small></footer></main>
+<main class="page" id="page">
+<header class="hero"><div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div><div class="hero-rule"></div><p class="hero-blessing">With the blessings of Allah and our families, we invite you to celebrate</p><h1>Shireen <span class="amp">&amp;</span><br>Sameer</h1><div class="hero-sub">NIKAH &amp; WEDDING CELEBRATION</div><div class="hero-date">04 · 12 · 2026</div><a class="hero-open" href="#welcome">OPEN INVITATION ✦</a><small class="hero-hint">SCROLL TO BEGIN YOUR INVITATION</small></header>
+<section class="section welcome" id="welcome"><div class="arabic dark">السَّلَامُ عَلَيْكُمْ</div><div class="eyebrow">ASSALAMU ALAIKUM</div><h2>A Joyful Beginning</h2><p class="copy">By the grace of Almighty Allah, we request the honour of your presence and blessings as we celebrate the marriage of</p><div class="couple-grid"><article><div class="person-symbol">☾</div><h3>Shireen</h3><small>THE BRIDE</small></article><article><div class="person-symbol">✧</div><h3>Sameer</h3><small>THE GROOM</small></article></div><div class="script together">Together in faith, together<br>in life</div></section>
+<section class="section date-section"><div class="eyebrow">SAVE THE DATE</div><h2>Our Special Day</h2><div class="ornament">✦ ─ ✦ ─ ✦</div><div class="date-card"><small>FRIDAY</small><strong>04</strong><span>December 2026</span><small>7 PM onwards</small></div><div class="countgrid"><div><b id="days">--</b><span>DAYS</span></div><div><b id="hours">--</b><span>HOURS</span></div><div><b id="minutes">--</b><span>MINUTES</span></div><div><b id="seconds">--</b><span>SECONDS</span></div></div><p class="copy">We look forward to sharing this blessed occasion with you.</p></section>
+<section class="section gathering"><div class="arabic dark">بَارَكَ اللَّهُ لَكُمَا</div><h2>Wedding Gathering</h2><div class="ornament">✦ ─ ✦ ─ ✦</div><div class="venuecard"><div class="eyebrow">DATE</div><p>Friday, 04 December 2026</p><div class="eyebrow">TIME</div><p>7 PM onwards</p><div class="eyebrow">VENUE</div><h3>Quadri Function Hall</h3><p>Udgir, Maharashtra – 413517</p></div></section>
+<section class="section reach"><div class="eyebrow">FIND US</div><h2>How to Reach</h2><p class="copy">We will be delighted to welcome you at our wedding venue.</p><div class="map-card"><div class="map-art"><span class="map-pin">📍</span></div><h3>Quadri Function Hall</h3><p>Udgir, Maharashtra – 413517</p><a class="map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Quadri+Function+Hall+Udgir+Maharashtra">GET DIRECTIONS →</a></div></section>
+<section class="section blessing"><div class="arabic">جَزَاكَ اللَّهُ خَيْرًا</div><div class="ornament">✦</div><h2>Your Presence Is Our Blessing</h2><p>Your duas, love and presence will make our celebration even more meaningful. We hope to celebrate this beautiful day with you.</p><a href="#page" class="backtop">BACK TO INVITATION ↑</a></section>
+<footer class="footer"><div class="script">With duas &amp; love</div><p>Shireen &amp; Sameer</p><small>MAY ALLAH BLESS THIS UNION</small></footer></main>
 <script>
 const intro=document.getElementById('intro'),doors=document.getElementById('doors'),openbtn=document.getElementById('openbtn'),page=document.getElementById('page'),song=document.getElementById('song');
 let autoScrollFrame=null,autoScrollActive=false,lastFrame=0;
-function autoScroll(ts){if(!autoScrollActive)return;if(!lastFrame)lastFrame=ts;const delta=Math.min((ts-lastFrame)/1000,.05);lastFrame=ts;window.scrollBy(0,delta*38);if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2){autoScrollActive=false;return}autoScrollFrame=requestAnimationFrame(autoScroll)}
+function autoScroll(ts){if(!autoScrollActive)return;if(!lastFrame)lastFrame=ts;const delta=Math.min((ts-lastFrame)/1000,.05);lastFrame=ts;window.scrollBy(0,delta*58);if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2){autoScrollActive=false;return}autoScrollFrame=requestAnimationFrame(autoScroll)}
 function stopAutoScroll(){autoScrollActive=false;if(autoScrollFrame)cancelAnimationFrame(autoScrollFrame);lastFrame=0}
 openbtn.addEventListener('click',()=>{doors.classList.add('open');openbtn.textContent='WELCOME…';song.volume=.78;try{song.currentTime=72}catch(e){}song.addEventListener('loadedmetadata',()=>{if(song.currentTime<72)song.currentTime=72},{once:true});song.play().catch(()=>{});setTimeout(()=>{intro.classList.add('hide');page.classList.add('ready');document.body.style.overflow='';setTimeout(()=>{autoScrollActive=true;autoScrollFrame=requestAnimationFrame(autoScroll)},1200)},1900)});
 document.body.style.overflow='hidden';
