@@ -122,8 +122,27 @@ body{background:#e7eee5;color:#173d32}
 .backtop{display:inline-block;margin-top:24px;color:#d7bd83;text-decoration:none;font:8px Manrope,sans-serif;letter-spacing:.18em}
 .footer{background:#032d24;border-top:1px solid #c7a66b}
 .footer .script{font-size:37px;color:#e8cc8d!important}
+
+/* Reference envelope intro — emerald green and champagne gold */
+.envelope{height:240px;width:min(100%,320px);margin:auto;position:relative;filter:drop-shadow(0 18px 18px #092e2440)}
+.env-back{position:absolute;inset:28px 0 0;background:#0b5942;border:1px solid #c7a66b}
+.env-letter{position:absolute;z-index:1;left:8%;right:8%;top:18px;height:190px;background:#fbf8ef;border:1px solid #d9c79f;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:transform 1s,top 1s}
+.env-letter small{font:9px Manrope,sans-serif;letter-spacing:.18em;color:#927443}
+.env-letter strong{font:42px 'Great Vibes',cursive;font-weight:400;color:#075642}
+.env-letter span{font:10px Manrope,sans-serif;letter-spacing:.12em;color:#927443}
+.env-flap{position:absolute;z-index:3;inset:28px 0 auto;height:125px;background:#d8bd82;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s}
+.env-left,.env-right,.env-bottom{position:absolute;z-index:4;inset:28px 0 0}
+.env-left{clip-path:polygon(0 0,54% 56%,0 100%);background:#c8a96b}
+.env-right{clip-path:polygon(100% 0,46% 56%,100% 100%);background:#b58e4c}
+.env-bottom{clip-path:polygon(0 100%,50% 48%,100% 100%);background:#e5d2a5}
+.wax{position:absolute;z-index:5;top:113px;left:calc(50% - 25px);width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#f3d99d,#8c6b35);border:2px solid #f8e8bd;color:#fff4d9;font-size:15px;transition:opacity .3s}
+.envelope.open .env-flap{transform:rotateX(180deg)}
+.envelope.open .env-letter{transform:translateY(-105px)}
+.envelope.open .wax{opacity:0}
+.intro-caption{color:#e5d2a5}
+.intro-note{color:#927443}
 </style></head><body>
-<div class="intro" id="intro"><div class="intro-inner"><div class="intro-caption">YOU ARE CORDIALLY INVITED · 04 DECEMBER 2026</div><div class="doors" id="doors"><div class="door-welcome"><small>THE WEDDING CELEBRATION OF</small><strong>Shireen &amp; Sameer</strong><span>FRIDAY · 7 PM ONWARDS</span></div><div class="door-frame"></div><div class="door-panel door-left"></div><div class="door-panel door-right"></div><div class="door-center">♡</div></div><button class="openbtn" id="openbtn">OPEN THE DOORS</button><div class="intro-note">A beautiful beginning, by the grace of Allah</div></div></div>
+<div class="intro" id="intro"><div class="intro-inner"><div class="intro-caption">YOU ARE CORDIALLY INVITED · 04 DECEMBER 2026</div><div class="envelope" id="envelope"><div class="env-back"></div><div class="env-letter"><small>YOU ARE INVITED TO CELEBRATE</small><strong>Shireen &amp; Sameer</strong><span>FRIDAY · 7 PM ONWARDS</span></div><div class="env-flap"></div><div class="env-left"></div><div class="env-right"></div><div class="env-bottom"></div><div class="wax">S ♡ S</div></div><button class="openbtn" id="openbtn">OPEN YOUR INVITATION</button><div class="intro-note">A beautiful beginning, by the grace of Allah</div></div></div>
 <audio id="song" src="https://res.cloudinary.com/mnqvmnca/video/upload/v1795369104/wedding-song.mp3" preload="auto" loop></audio>
 <main class="page" id="page">
 <header class="hero"><div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div><div class="hero-rule"></div><p class="hero-blessing">With the blessings of Allah and our families, we invite you to celebrate</p><h1>Shireen <span class="amp">&amp;</span><br>Sameer</h1><div class="hero-sub">NIKAH &amp; WEDDING CELEBRATION</div><div class="hero-date">04 · 12 · 2026</div><a class="hero-open" href="#welcome">OPEN INVITATION ✦</a><small class="hero-hint">SCROLL TO BEGIN YOUR INVITATION</small></header>
@@ -134,16 +153,16 @@ body{background:#e7eee5;color:#173d32}
 <section class="section blessing"><div class="arabic">جَزَاكَ اللَّهُ خَيْرًا</div><div class="ornament">✦</div><h2>Your Presence Is Our Blessing</h2><p>Your duas, love and presence will make our celebration even more meaningful. We hope to celebrate this beautiful day with you.</p><a href="#page" class="backtop">BACK TO INVITATION ↑</a></section>
 <footer class="footer"><div class="script">With duas &amp; love</div><p>Shireen &amp; Sameer</p><small>MAY ALLAH BLESS THIS UNION</small></footer></main>
 <script>
-const intro=document.getElementById('intro'),doors=document.getElementById('doors'),openbtn=document.getElementById('openbtn'),page=document.getElementById('page'),song=document.getElementById('song');
+const intro=document.getElementById('intro'),envelope=document.getElementById('envelope'),openbtn=document.getElementById('openbtn'),page=document.getElementById('page'),song=document.getElementById('song');
 let autoScrollFrame=null,autoScrollActive=false,lastFrame=0;
 function autoScroll(ts){if(!autoScrollActive)return;if(!lastFrame)lastFrame=ts;const delta=Math.min((ts-lastFrame)/1000,.05);lastFrame=ts;window.scrollBy(0,delta*58);if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-2){autoScrollActive=false;return}autoScrollFrame=requestAnimationFrame(autoScroll)}
 function stopAutoScroll(){autoScrollActive=false;if(autoScrollFrame)cancelAnimationFrame(autoScrollFrame);lastFrame=0}
-openbtn.addEventListener('click',()=>{doors.classList.add('open');openbtn.textContent='WELCOME…';song.volume=.78;try{song.currentTime=72}catch(e){}song.addEventListener('loadedmetadata',()=>{if(song.currentTime<72)song.currentTime=72},{once:true});song.play().catch(()=>{});setTimeout(()=>{intro.classList.add('hide');page.classList.add('ready');document.body.style.overflow='';setTimeout(()=>{autoScrollActive=true;autoScrollFrame=requestAnimationFrame(autoScroll)},1200)},1900)});
+openbtn.addEventListener('click',()=>{envelope.classList.add('open');openbtn.textContent='OPENING…';song.volume=.78;try{song.currentTime=72}catch(e){}song.addEventListener('loadedmetadata',()=>{if(song.currentTime<72)song.currentTime=72},{once:true});song.play().catch(()=>{});setTimeout(()=>{intro.classList.add('hide');page.classList.add('ready');document.body.style.overflow='';setTimeout(()=>{autoScrollActive=true;autoScrollFrame=requestAnimationFrame(autoScroll)},1200)},1900)});
 document.body.style.overflow='hidden';
 ['wheel','touchstart','keydown'].forEach(ev=>window.addEventListener(ev,stopAutoScroll,{passive:true}));
-document.getElementById('reveal').addEventListener('click',()=>{document.getElementById('heartbox').classList.add('revealed');document.getElementById('heartbox').innerHTML='♡';document.getElementById('revealedText').hidden=false});
+
 const target=new Date('2026-12-04T19:00:00+05:30').getTime();function tick(){let d=Math.max(0,target-Date.now());for(const [id,v] of [['days',Math.floor(d/86400000)],['hours',Math.floor(d/3600000)%24],['minutes',Math.floor(d/60000)%60],['seconds',Math.floor(d/1000)%60]])document.getElementById(id).textContent=String(v).padStart(2,'0')}tick();setInterval(tick,1000);
-document.getElementById('wishform').addEventListener('submit',e=>{e.preventDefault();document.getElementById('wishthanks').hidden=false;e.target.reset()});
+
 
 /* Scroll reveal and progress polish */
 const progress=document.createElement('div');progress.className='scroll-progress';document.body.appendChild(progress);
